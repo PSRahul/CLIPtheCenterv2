@@ -130,8 +130,13 @@ def main(cfg):
     prediction_with_nms_resized = assign_classes(clip_embedding, prediction_with_nms_resized)
     # calculate_torchmetrics_mAP(gt, prediction_with_nms_resized)
 
+    print("Without Category Labels")
     calculate_coco_result(gt=os.path.join(dataset_root, "labels.json"), prediction=prediction_with_nms_resized,
-                          image_index_only=False, image_index=6)
+                          image_index_only=False, image_index=None,useCats=0)
+    print("With Category Labels")
+
+    calculate_coco_result(gt=os.path.join(dataset_root, "labels.json"), prediction=prediction_with_nms_resized,
+                          image_index_only=False, image_index=None, useCats=1)
     for id in range(1, len(dataset)+1):
         visualise_bbox(cfg=cfg, dataset=dataset, id=id, gt=gt, pred=prediction_with_nms_resized, draw_gt=True,
                        draw_pred=True,

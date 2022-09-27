@@ -32,7 +32,7 @@ def visualise_bbox(cfg, dataset, id, gt=None, pred=None, draw_gt=True, draw_pred
 
     if draw_pred:
         predictions_image = pred[pred[:, 0] == int(id)]
-        print("Number of Predictions", predictions_image.shape[0])
+
         for i in range(predictions_image.shape[0]):
             bbox_i = predictions_image[i, 1:5]
             rect = patches.Rectangle(
@@ -43,7 +43,7 @@ def visualise_bbox(cfg, dataset, id, gt=None, pred=None, draw_gt=True, draw_pred
 
     if draw_gt:
         gt_image = gt[gt[:, 0] == int(id)]
-        print("Number of GroundTruth Objects", gt_image.shape[0])
+
         for i in range(gt_image.shape[0]):
             bbox_i = gt_image[i, 1:5]
             rect = patches.Rectangle(
@@ -51,7 +51,7 @@ def visualise_bbox(cfg, dataset, id, gt=None, pred=None, draw_gt=True, draw_pred
                 bbox_i[3], linewidth=2, edgecolor='b',
                 facecolor='none')
             ax.add_patch(rect)
-
+    print(id," | Number of Predictions | ", predictions_image.shape[0]," | Number of GroundTruth Objects | ", gt_image.shape[0])
     #plt.show()
     os.makedirs(os.path.join(checkpoint_dir,"images"), exist_ok=True)
     plt.savefig(os.path.join(checkpoint_dir,"images",str(id)+".png"))

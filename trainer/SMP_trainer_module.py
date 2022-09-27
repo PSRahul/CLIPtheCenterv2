@@ -222,7 +222,7 @@ class SMPTrainer():
                     self.model.train()
                     self.optimizer.zero_grad()
                     output_heatmap, output_bbox, detections, model_encodings, heatmap_loss, bbox_loss, embedding_loss = self.get_model_output_and_loss(
-                        batch, split=1)
+                        batch, split=0)
                     heatmap_loss = self.cfg["model"]["loss_weight"]["heatmap_head"] * heatmap_loss
                     bbox_loss = bbox_loss_weight * bbox_loss
                     embedding_loss = embedding_loss_weight * embedding_loss
