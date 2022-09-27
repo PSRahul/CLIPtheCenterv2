@@ -115,6 +115,13 @@ class SMPTrainer():
             with tqdm(enumerate(self.val_dataloader, 0), unit=" val batch") as tepoch:
                 for i, batch in tepoch:
                     tepoch.set_description(f"Epoch {self.epoch}")
+                    embedding_loss_weight = 0
+                    bbox_loss_weight = 0
+
+                    if (self.epoch > self.cfg["trainer"]["embedding_loss_start_epoch"]):
+                        embedding_loss_weight = self.cfg["model"]["loss_weight"]["embedding_head"]
+                    if (self.epoch > self.cfg["trainer"]["bbox_loss_start_epoch"]):
+                        bbox_loss_weight = self.cfg["model"]["loss_weight"]["bbox_head"]
 
                     for key, value in batch.items():
                         if key != "image_path":
@@ -123,87 +130,86 @@ class SMPTrainer():
                     output_heatmap, output_bbox, detections, model_encodings, heatmap_loss, bbox_loss, embedding_loss = self.get_model_output_and_loss(
                         batch, train_set=False)
 
-                    loss = self.cfg["model"]["loss_weight"]["heatmap_head"] * heatmap_loss + \
-                           self.cfg["model"]["loss_weight"]["bbox_head"] * bbox_loss + \
-                           self.cfg["model"]["loss_weight"]["embedding_head"] * embedding_loss
+                    heatmap_loss = self.cfg["model"]["loss_weight"]["heatmap_head"] * heatmap_loss
+                    bbox_loss = bbox_loss_weight * bbox_loss
+                    embedding_loss = embedding_loss_weight * embedding_loss
+                    loss = heatmap_loss + bbox_loss + embedding_loss
 
                     running_val_heatmap_loss += heatmap_loss.item()
                     running_val_bbox_loss += bbox_loss.item()
                     running_val_embedding_loss = embedding_loss.item()
                     running_val_loss += loss.item()
 
-                    tepoch.set_postfix(val_loss=running_val_loss / (i + 1),
-                                       val_heatmap_loss=running_val_heatmap_loss / (i + 1),
-                                       val_bbox_loss=running_val_bbox_loss / (i + 1),
-                                       val_embedding_loss=running_val_embedding_loss / (i + 1))
+                    tepoch.set_postfix(val_loss=running_val_loss,
+                                       val_heatmap_loss=running_val_heatmap_loss ,
+                                       val_bbox_loss=running_val_bbox_loss ,
+                                       val_embedding_loss=running_val_embedding_loss )
 
-                running_val_heatmap_loss /= len(self.val_dataloader)
-                running_val_bbox_loss /= len(self.val_dataloader)
-                running_val_embedding_loss /= len(self.val_dataloader)
-                running_val_loss /= len(self.val_dataloader)
+            running_val_heatmap_loss /= len(self.val_dataloader)
+            running_val_bbox_loss /= len(self.val_dataloader)
+            running_val_embedding_loss /= len(self.val_dataloader)
+            running_val_loss /= len(self.val_dataloader)
 
-                self.running_val_loss = running_val_loss
-                self.writer.add_scalar('val loss',
-                                       running_val_loss,
-                                       self.epoch * len(self.val_dataloader) + i)
-                self.writer.add_scalar('val heatmap loss',
-                                       running_val_heatmap_loss,
-                                       self.epoch * len(self.val_dataloader) + i)
-                self.writer.add_scalar('val bbox loss',
-                                       running_val_bbox_loss,
-                                       self.epoch * len(self.val_dataloader) + i)
-                self.writer.add_scalar('val embedding loss',
-                                       running_val_embedding_loss,
-                                       self.epoch * len(self.val_dataloader) + i)
+            self.running_val_loss = running_val_loss
+            self.writer.add_scalar('val loss',
+                                   running_val_loss,
+                                   self.epoch * len(self.val_dataloader) + i)
+            self.writer.add_scalar('val heatmap loss',
+                                   running_val_heatmap_loss,
+                                   self.epoch * len(self.val_dataloader) + i)
+            self.writer.add_scalar('val bbox loss',
+                                   running_val_bbox_loss,
+                                   self.epoch * len(self.val_dataloader) + i)
+            self.writer.add_scalar('val embedding loss',
+                                   running_val_embedding_loss,
+                                   self.epoch * len(self.val_dataloader) + i)
 
-                self.writer.add_figure('Validation Center HeatMap Visualisation',
-                                       plot_heatmaps(predicted_heatmap=output_heatmap.cpu().detach().numpy(),
-                                                     groundtruth_heatmap=batch[
-                                                         "center_heatmap"].cpu().detach().numpy()),
-                                       global_step=self.epoch * len(self.val_dataloader) + i)
-                self.writer.add_figure('Validation BBox Width HeatMap Visualisation',
-                                       plot_heatmaps(predicted_heatmap=output_bbox[:, 0, :, :].cpu().detach().numpy(),
-                                                     groundtruth_heatmap=batch[
-                                                                             "bbox_heatmap"][:, 0, :,
-                                                                         :].cpu().detach().numpy()),
-                                       global_step=self.epoch * len(self.val_dataloader) + i)
-                self.writer.add_figure('Validation BBox Height HeatMap Visualisation',
-                                       plot_heatmaps(predicted_heatmap=output_bbox[:, 1, :, :].cpu().detach().numpy(),
-                                                     groundtruth_heatmap=batch[
-                                                                             "bbox_heatmap"][:, 1, :,
-                                                                         :].cpu().detach().numpy()),
-                                       global_step=self.epoch * len(self.val_dataloader) + i)
+            self.writer.add_figure('Validation Center HeatMap Visualisation',
+                                   plot_heatmaps(predicted_heatmap=output_heatmap.cpu().detach().numpy(),
+                                                 groundtruth_heatmap=batch[
+                                                     "center_heatmap"].cpu().detach().numpy()),
+                                   global_step=self.epoch * len(self.val_dataloader) + i)
+            self.writer.add_figure('Validation BBox Width HeatMap Visualisation',
+                                   plot_heatmaps(predicted_heatmap=output_bbox[:, 0, :, :].cpu().detach().numpy(),
+                                                 groundtruth_heatmap=batch[
+                                                                         "bbox_heatmap"][:, 0, :,
+                                                                     :].cpu().detach().numpy()),
+                                   global_step=self.epoch * len(self.val_dataloader) + i)
+            self.writer.add_figure('Validation BBox Height HeatMap Visualisation',
+                                   plot_heatmaps(predicted_heatmap=output_bbox[:, 1, :, :].cpu().detach().numpy(),
+                                                 groundtruth_heatmap=batch[
+                                                                         "bbox_heatmap"][:, 1, :,
+                                                                     :].cpu().detach().numpy()),
+                                   global_step=self.epoch * len(self.val_dataloader) + i)
 
-                file_save_string = 'val epoch {} -|- global_step {} '.format(self.epoch,
-                                                                             self.epoch * len(
-                                                                                 self.val_dataloader) + i)
-                file_save_string += 'loss {:.7f} -|- heatmap_loss {:.7f} -|- bbox_loss {:.7f} -|- embedding_loss {:.7f} \n'.format(
-                    running_val_loss,
-                    running_val_heatmap_loss,
-                    running_val_bbox_loss,
-                    running_val_embedding_loss)
-                # 'val loss-{:.7f}.pth'.format(self.epoch, self.running_loss)
-                self.f.write(file_save_string)
+            file_save_string = 'val epoch {} -|- global_step {} '.format(self.epoch,
+                                                                         self.epoch * len(
+                                                                             self.val_dataloader) + i)
+            file_save_string += 'loss {:.7f} -|- heatmap_loss {:.7f} -|- bbox_loss {:.7f} -|- embedding_loss {:.7f} \n'.format(
+                running_val_loss,
+                running_val_heatmap_loss,
+                running_val_bbox_loss,
+                running_val_embedding_loss)
+            # 'val loss-{:.7f}.pth'.format(self.epoch, self.running_loss)
+            self.f.write(file_save_string)
 
     def train(self, ):
-        running_heatmap_loss = 0.0
-        running_offset_loss = 0.0
-        running_bbox_loss = 0.0
-        running_loss = 0.0
+
         self.model.to(self.device)
         torch.autograd.set_detect_anomaly(True)
         for self.epoch in range(self.epoch, self.cfg["trainer"]["num_epochs"]):
+            running_heatmap_loss = 0.0
+            running_offset_loss = 0.0
+            running_bbox_loss = 0.0
+            running_loss = 0.0
             embedding_loss_weight = 0
             bbox_loss_weight = 0
-
+            self.model.train()
             if (self.epoch > self.cfg["trainer"]["embedding_loss_start_epoch"]):
                 embedding_loss_weight = self.cfg["model"]["loss_weight"]["embedding_head"]
             if (self.epoch > self.cfg["trainer"]["bbox_loss_start_epoch"]):
                 bbox_loss_weight = self.cfg["model"]["loss_weight"]["bbox_head"]
-            running_heatmap_loss = 0.0
-            running_loss = 0.0
-            running_bbox_loss = 0.0
-            running_embedding_loss = 0.0
+
             with tqdm(enumerate(self.train_dataloader, 0), unit=" train batch") as tepoch:
                 for i, batch in tepoch:
                     tepoch.set_description(f"Epoch {self.epoch}")
@@ -234,64 +240,65 @@ class SMPTrainer():
                     self.optimizer.step()
 
                     # 70
-                    if (i % int(self.log_interval * (len(self.train_dataloader)))) == 0:
-                        running_heatmap_loss /= (i + 1)
-                        running_bbox_loss /= (i + 1)
-                        running_embedding_loss /= (i + 1)
-                        running_loss /= (i + 1)
+                    tepoch.set_postfix(loss=running_loss,
+                                       heatmap_loss=running_heatmap_loss,
+                                       bbox_loss=running_bbox_loss,
 
-                        # ...log the running loss
-                        tepoch.set_postfix(loss=running_loss,
-                                           heatmap_loss=running_heatmap_loss,
-                                           bbox_loss=running_bbox_loss,
-                                           offset_loss=running_offset_loss,
-                                           embedding_loss=running_embedding_loss)
-                        self.running_loss = running_loss
-                        self.writer.add_scalar('loss',
-                                               running_loss,
-                                               self.epoch * len(self.train_dataloader) + i)
-                        self.writer.add_scalar('heatmap loss',
-                                               running_heatmap_loss,
-                                               self.epoch * len(self.train_dataloader) + i)
-                        self.writer.add_scalar('bbox loss',
-                                               running_bbox_loss,
-                                               self.epoch * len(self.train_dataloader) + i)
-                        self.writer.add_scalar('embedding loss',
-                                               running_embedding_loss,
-                                               self.epoch * len(self.train_dataloader) + i)
+                                       embedding_loss=running_embedding_loss)
 
-                        self.writer.add_figure('Center HeatMap Visualisation',
-                                               plot_heatmaps(predicted_heatmap=output_heatmap.cpu().detach().numpy(),
-                                                             groundtruth_heatmap=batch[
-                                                                 "center_heatmap"].cpu().detach().numpy(),
-                                                             sigmoid=True),
-                                               global_step=self.epoch * len(self.train_dataloader) + i)
-                        self.writer.add_figure('BBox HeatMap Width Visualisation',
-                                               plot_heatmaps(
-                                                   predicted_heatmap=output_bbox[:, 0, :, :].cpu().detach().numpy(),
-                                                   groundtruth_heatmap=batch[
-                                                                           "bbox_heatmap"][:, 0, :,
-                                                                       :].cpu().detach().numpy()),
-                                               global_step=self.epoch * len(self.train_dataloader) + i)
+            running_heatmap_loss /= len(self.train_dataloader)
+            running_bbox_loss /= len(self.train_dataloader)
+            running_embedding_loss /= len(self.train_dataloader)
+            running_loss /= len(self.train_dataloader)
 
-                        self.writer.add_figure('BBox HeatMap Height Visualisation',
-                                               plot_heatmaps(
-                                                   predicted_heatmap=output_bbox[:, 1, :, :].cpu().detach().numpy(),
-                                                   groundtruth_heatmap=batch[
-                                                                           "bbox_heatmap"][:, 1, :,
-                                                                       :].cpu().detach().numpy()),
-                                               global_step=self.epoch * len(self.train_dataloader) + i)
+            # ...log the running loss
 
-                        file_save_string = 'train epoch {} -|- global_step {} '.format(self.epoch, self.epoch * len(
-                            self.train_dataloader) + i)
-                        file_save_string += 'loss {:.7f} -|- heatmap_loss {:.7f} -|- bbox_loss {:.7f} -|- embedding_loss {:.7f}\n'.format(
-                            running_loss,
-                            running_heatmap_loss,
-                            running_bbox_loss,
-                            running_embedding_loss)
+            self.running_loss = running_loss
+            self.writer.add_scalar('loss',
+                                   running_loss,
+                                   self.epoch )
+            self.writer.add_scalar('heatmap loss',
+                                   running_heatmap_loss,
+                                   self.epoch )
+            self.writer.add_scalar('bbox loss',
+                                   running_bbox_loss,
+                                   self.epoch )
+            self.writer.add_scalar('embedding loss',
+                                   running_embedding_loss,
+                                   self.epoch )
 
-                        self.f.write(file_save_string)
-                        plt.close('all')
+            self.writer.add_figure('Center HeatMap Visualisation',
+                                   plot_heatmaps(predicted_heatmap=output_heatmap.cpu().detach().numpy(),
+                                                 groundtruth_heatmap=batch[
+                                                     "center_heatmap"].cpu().detach().numpy(),
+                                                 sigmoid=True),
+                                   global_step=self.epoch )
+            self.writer.add_figure('BBox HeatMap Width Visualisation',
+                                   plot_heatmaps(
+                                       predicted_heatmap=output_bbox[:, 0, :, :].cpu().detach().numpy(),
+                                       groundtruth_heatmap=batch[
+                                                               "bbox_heatmap"][:, 0, :,
+                                                           :].cpu().detach().numpy()),
+                                   global_step=self.epoch)
+
+            self.writer.add_figure('BBox HeatMap Height Visualisation',
+                                   plot_heatmaps(
+                                       predicted_heatmap=output_bbox[:, 1, :, :].cpu().detach().numpy(),
+                                       groundtruth_heatmap=batch[
+                                                               "bbox_heatmap"][:, 1, :,
+                                                           :].cpu().detach().numpy()),
+                                   global_step=self.epoch )
+
+            file_save_string = 'train epoch {} -|- global_step {} '.format(self.epoch, self.epoch * len(
+                self.train_dataloader) + i)
+            file_save_string += 'loss {:.7f} -|- heatmap_loss {:.7f} -|- bbox_loss {:.7f} -|- embedding_loss {:.7f}\n'.format(
+                running_loss,
+                running_heatmap_loss,
+                running_bbox_loss,
+                running_embedding_loss)
+
+            self.f.write(file_save_string)
+            plt.close('all')
 
             # self.save_model_checkpoint()
             if (self.epoch % self.cfg["trainer"]["val_save_interval"] == 0) or (

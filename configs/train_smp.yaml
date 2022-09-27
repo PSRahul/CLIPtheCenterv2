@@ -23,9 +23,9 @@ data:
   val_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/train/coco/"
   test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/train/coco/"
   train_aug: False
-  train_batch_size: 3
-  val_batch_size: 3
-  test_batch_size: 3
+  train_batch_size: 5
+  val_batch_size: 5
+  test_batch_size: 5
   input_dimension: 320 # EfficientNetB2
   #   input_dimension: 384  ResNet18
 heatmap:
