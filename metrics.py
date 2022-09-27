@@ -54,7 +54,7 @@ def set_logging(cfg):
     now = datetime.now()
     date_save_string = now.strftime("%d%m%Y_%H%M")
     checkpoint_dir = os.path.join(
-        "/home/psrahul/MasterThesis/repo/Phase3/CLIPandDetect/",
+        cfg["logging"]["root_dir"],
         cfg["logging"]["checkpoint_dir"],
         date_save_string,
     )

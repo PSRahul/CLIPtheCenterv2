@@ -19,9 +19,9 @@ trainer:
   bbox_loss_start_epoch: -1
 
 data:
-  train_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_2012_ZETA/base_classes/train/coco/"
-  val_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_2012_ZETA/base_classes/train/coco/"
-  test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_2012_ZETA/base_classes/train/coco/"
+  train_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/train/coco/"
+  val_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/train/coco/"
+  test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/train/coco/"
   train_aug: False
   train_batch_size: 3
   val_batch_size: 3
@@ -79,7 +79,8 @@ model:
     offset_head: 0
     embedding_head: 1
 logging:
-  checkpoint_dir: "outputs/training_debug/"
+  root_dir: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/"
+  checkpoint_dir: "PASCAL_3_2_10"
   display_log_fraction: 1
 evaluation:
   heatmap_pooling_kernel: 3
