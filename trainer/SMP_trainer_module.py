@@ -7,7 +7,7 @@ import torch.optim as optim
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 
-from loss.bbox_loss import calculate_bbox_loss_without_heatmap, calculate_bbox_loss_with_heatmap,calculate_bbox_loss_with_giou
+from loss.bbox_loss import calculate_bbox_loss_without_heatmap, calculate_bbox_loss_with_heatmapt
 from loss.heatmap_loss import calculate_heatmap_loss
 from loss.offset_loss import calculate_offset_loss
 from trainer.trainer_visualisation import plot_heatmaps, save_test_outputs

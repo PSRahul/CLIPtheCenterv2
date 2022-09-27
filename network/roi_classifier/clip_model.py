@@ -1,7 +1,5 @@
 import torch.nn as nn
 import torch
-from torchinfo import summary
-from network.models.EfficientnetConv2DT.utils import get_bounding_box_prediction
 import clip
 from PIL import Image
 import os

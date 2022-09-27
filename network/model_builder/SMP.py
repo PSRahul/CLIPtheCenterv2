@@ -13,11 +13,6 @@ import sys
 from torch.nn import Identity
 import segmentation_models_pytorch as smp
 from segmentation_models_pytorch import DeepLabV3Plus, Unet
-from network.decoder.decoder_model import DecoderConvTModel
-from network.encoder.resnet18 import ResNet18Model
-
-from network.encoder.resnet50 import ResNet50Model
-
 
 class SMPModel(nn.Module):
     def __init__(self, cfg):
