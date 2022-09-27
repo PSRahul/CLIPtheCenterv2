@@ -80,7 +80,7 @@ class SMPTrainer():
     def get_model_output_and_loss(self, batch, train_set):
 
         output_heatmap, output_bbox, detections, clip_encoding, model_encodings = self.model(
-            batch, train_set)
+            batch,self.epoch, train_set)
         output_heatmap = output_heatmap.squeeze(dim=1).to(self.device)
         heatmap_loss = calculate_heatmap_loss(output_heatmap, batch["center_heatmap"])
         bbox_loss = 0
