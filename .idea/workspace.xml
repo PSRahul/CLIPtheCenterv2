@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="1. Fix .gitignore">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="1. metric config. for PASCAL_3_2_10">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/metrics.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/metrics.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,7 +180,7 @@
       <workItem from="1664280841576" duration="1161000" />
       <workItem from="1664282428947" duration="195000" />
       <workItem from="1664282635123" duration="704000" />
-      <workItem from="1664293171593" duration="6590000" />
+      <workItem from="1664293171593" duration="6696000" />
     </task>
     <task id="LOCAL-00001" summary="added the original 3 image overfitting">
       <created>1664282544330</created>
@@ -238,7 +238,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664299746814</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="1. metric config. for PASCAL_3_2_10">
+      <created>1664299971591</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1664299971591</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +270,8 @@
     <MESSAGE value="1. Remove min_visiblity and area in augmentations.py&#10;2. Add drop_last=True" />
     <MESSAGE value="1. Fix Logging to Epoch ends" />
     <MESSAGE value="1. Fix .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. Fix .gitignore" />
+    <MESSAGE value="1. metric config. for PASCAL_3_2_10" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. metric config. for PASCAL_3_2_10" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$dataset_module.coverage" NAME="dataset_module Coverage Results" MODIFIED="1664296134755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />

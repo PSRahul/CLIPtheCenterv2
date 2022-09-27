@@ -33,7 +33,7 @@ heatmap:
   radius_scaling: 16
   fix_radius: True
   fix_radius_value: 5
-max_objects_per_image: 1
+max_objects_per_image: 5
 smp:
   model: "Unet" #Unet" #"Unet" #DeepLabV3Plus"
   encoder_name: "resnet50" #"resnet50" #mobilenet_v2"
@@ -84,4 +84,4 @@ logging:
   display_log_fraction: 1
 evaluation:
   heatmap_pooling_kernel: 3
-  topk_k: 1
+  topk_k: 5
