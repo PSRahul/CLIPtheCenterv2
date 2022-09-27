@@ -153,34 +153,34 @@ class SMPTrainer():
             self.running_val_loss = running_val_loss
             self.writer.add_scalar('val loss',
                                    running_val_loss,
-                                   self.epoch * len(self.val_dataloader) + i)
+                                   self.epoch )
             self.writer.add_scalar('val heatmap loss',
                                    running_val_heatmap_loss,
-                                   self.epoch * len(self.val_dataloader) + i)
+                                   self.epoch )
             self.writer.add_scalar('val bbox loss',
                                    running_val_bbox_loss,
-                                   self.epoch * len(self.val_dataloader) + i)
+                                   self.epoch )
             self.writer.add_scalar('val embedding loss',
                                    running_val_embedding_loss,
-                                   self.epoch * len(self.val_dataloader) + i)
+                                   self.epoch )
 
             self.writer.add_figure('Validation Center HeatMap Visualisation',
                                    plot_heatmaps(predicted_heatmap=output_heatmap.cpu().detach().numpy(),
                                                  groundtruth_heatmap=batch[
                                                      "center_heatmap"].cpu().detach().numpy()),
-                                   global_step=self.epoch * len(self.val_dataloader) + i)
+                                   global_step=self.epoch )
             self.writer.add_figure('Validation BBox Width HeatMap Visualisation',
                                    plot_heatmaps(predicted_heatmap=output_bbox[:, 0, :, :].cpu().detach().numpy(),
                                                  groundtruth_heatmap=batch[
                                                                          "bbox_heatmap"][:, 0, :,
                                                                      :].cpu().detach().numpy()),
-                                   global_step=self.epoch * len(self.val_dataloader) + i)
+                                   global_step=self.epoch )
             self.writer.add_figure('Validation BBox Height HeatMap Visualisation',
                                    plot_heatmaps(predicted_heatmap=output_bbox[:, 1, :, :].cpu().detach().numpy(),
                                                  groundtruth_heatmap=batch[
                                                                          "bbox_heatmap"][:, 1, :,
                                                                      :].cpu().detach().numpy()),
-                                   global_step=self.epoch * len(self.val_dataloader) + i)
+                                   global_step=self.epoch )
 
             file_save_string = 'val epoch {} -|- global_step {} '.format(self.epoch,
                                                                          self.epoch * len(
