@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="working model with 100mAP">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/metrics.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/train.py" afterDir="false" />
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="1. Add checkpoint root_dir&#10;2. Initial config. for PASCAL_3_2_10">
+      <change beforePath="$PROJECT_DIR$/data/augmentations.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/augmentations.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +179,7 @@
       <workItem from="1664280841576" duration="1161000" />
       <workItem from="1664282428947" duration="195000" />
       <workItem from="1664282635123" duration="704000" />
-      <workItem from="1664293171593" duration="2629000" />
+      <workItem from="1664293171593" duration="2672000" />
     </task>
     <task id="LOCAL-00001" summary="added the original 3 image overfitting">
       <created>1664282544330</created>
@@ -198,7 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664294849097</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1. Add checkpoint root_dir&#10;2. Initial config. for PASCAL_3_2_10">
+      <created>1664295902810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664295902810</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +222,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added the original 3 image overfitting" />
     <MESSAGE value="working model with 100mAP" />
-    <option name="LAST_COMMIT_MESSAGE" value="working model with 100mAP" />
+    <MESSAGE value="1. Add checkpoint root_dir&#10;2. Initial config. for PASCAL_3_2_10" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. Add checkpoint root_dir&#10;2. Initial config. for PASCAL_3_2_10" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1664294668028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
