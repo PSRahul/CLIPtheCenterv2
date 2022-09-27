@@ -63,7 +63,7 @@ def main(cfg):
     trainer = SMPTrainer(cfg=cfg, checkpoint_dir=checkpoint_dir, model=detection_model,
                          train_dataloader=coco_dataset.load_train_dataloader(),
                          val_dataloader=coco_dataset.load_val_dataloader(),
-                         test_dataloader=coco_dataset.load_val_dataloader())
+                         test_dataloader=coco_dataset.load_test_dataloader())
     if (cfg["train"]):
         trainer.train()
     if (cfg["test"]):

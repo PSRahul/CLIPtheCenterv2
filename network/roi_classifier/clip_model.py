@@ -14,13 +14,16 @@ class CLIPModel(nn.Module):
         self.clip_model, self.clip_preprocess = clip.load("ViT-B/16", device="cuda")
         self.clip_model = self.clip_model.cuda().eval()
 
-    def forward(self, image_path, output_roi, train_set):
-        if (train_set):
+    def forward(self, image_path, output_roi, split):
+        if (split==0):
             self.image_root = os.path.join(self.cfg["data"]["train_data_root"], "data")
             batch_size = self.cfg["data"]["train_batch_size"]
-        else:
+        if (split == 1):
             self.image_root = os.path.join(self.cfg["data"]["val_data_root"], "data")
             batch_size = self.cfg["data"]["val_batch_size"]
+        if (split == 2):
+            self.image_root = os.path.join(self.cfg["data"]["test_data_root"], "data")
+            batch_size = self.cfg["data"]["test_batch_size"]
 
         clip_encodings = torch.zeros((output_roi.shape[0], 512))
         for batch_index in range(batch_size):

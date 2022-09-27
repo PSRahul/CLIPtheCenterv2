@@ -132,13 +132,13 @@ def main(cfg):
 
     calculate_coco_result(gt=os.path.join(dataset_root, "labels.json"), prediction=prediction_with_nms_resized,
                           image_index_only=False, image_index=6)
-    for id in range(1, 4):
+    for id in range(1, len(dataset)+1):
         visualise_bbox(cfg=cfg, dataset=dataset, id=id, gt=gt, pred=prediction_with_nms_resized, draw_gt=True,
                        draw_pred=True,
-                       resize_image_to_output_shape=False)
-        visualise_bbox(cfg=cfg, dataset=dataset, id=id, gt=gt, pred=prediction_with_nms, draw_gt=False,
-                       draw_pred=True,
-                       resize_image_to_output_shape=True)
+                       resize_image_to_output_shape=False,checkpoint_dir=checkpoint_dir)
+        #visualise_bbox(cfg=cfg, dataset=dataset, id=id, gt=gt, pred=prediction_with_nms, draw_gt=False,
+        #               draw_pred=True,
+        #               resize_image_to_output_shape=True,checkpoint_dir=checkpoint_dir)
 
 
 if __name__ == "__main__":

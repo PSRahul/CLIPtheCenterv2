@@ -52,7 +52,7 @@ class SMPModel(nn.Module):
 
     def model_init(self):
         # self.encoder_decoder_model.decoder(weights_init)
-         self.heatmap_head.model.apply(weights_init)
+        self.heatmap_head.model.apply(weights_init)
         # self.encoder_model.model.apply(weights_init)
         # self.decoder_model.model.apply(weights_init)
         self.bbox_head.bbox_h_model.apply(weights_init)
@@ -61,7 +61,7 @@ class SMPModel(nn.Module):
         self.roi_head.model.apply(weights_init)
         self.embedder.model.apply(weights_init)
 
-    def forward(self, batch, epoch,train_set=True):
+    def forward(self, batch, epoch,split=0):
         image = batch["image"].to(self.cfg["device"])
         image_path = batch["image_path"]
         image_id = batch['image_id'].to(self.cfg["device"])
@@ -84,12 +84,12 @@ class SMPModel(nn.Module):
         if (epoch > self.cfg["trainer"]["embedding_loss_start_epoch"]):
             detections_adjusted = make_detections_valid(self.cfg, detections)
             with torch.no_grad():
-                clip_encoding = self.clip_model(image_path, detections_adjusted, train_set=train_set)
+                clip_encoding = self.clip_model(image_path, detections_adjusted, split=split)
                 # clip_encoding = torch.zeros((image.shape[0], 512))
                 output_mask = get_binary_masks(self.cfg, detections_adjusted)
 
             masked_roi_heatmap = get_masked_heatmaps(self.cfg, output_roi, output_mask.cuda(),
-                                                     train_set=train_set)
+                                                     split=split)
             model_encodings = self.embedder(masked_roi_heatmap)
             model_encodings_normalised = model_encodings / model_encodings.norm(dim=-1, keepdim=True)
         else:

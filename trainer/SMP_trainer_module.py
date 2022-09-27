@@ -77,10 +77,10 @@ class SMPTrainer():
         self.load_checkpoint()
         print(self.model.state_dict()['bbox_head.model.2.bias'])
 
-    def get_model_output_and_loss(self, batch, train_set):
+    def get_model_output_and_loss(self, batch, split):
 
         output_heatmap, output_bbox, detections, clip_encoding, model_encodings = self.model(
-            batch,self.epoch, train_set)
+            batch,self.epoch, split)
         output_heatmap = output_heatmap.squeeze(dim=1).to(self.device)
         heatmap_loss = calculate_heatmap_loss(output_heatmap, batch["center_heatmap"])
         bbox_loss = 0
@@ -128,7 +128,7 @@ class SMPTrainer():
                             batch[key] = batch[key].to(self.device)
 
                     output_heatmap, output_bbox, detections, model_encodings, heatmap_loss, bbox_loss, embedding_loss = self.get_model_output_and_loss(
-                        batch, train_set=False)
+                        batch, split=1)
 
                     heatmap_loss = self.cfg["model"]["loss_weight"]["heatmap_head"] * heatmap_loss
                     bbox_loss = bbox_loss_weight * bbox_loss
@@ -222,7 +222,7 @@ class SMPTrainer():
                     self.model.train()
                     self.optimizer.zero_grad()
                     output_heatmap, output_bbox, detections, model_encodings, heatmap_loss, bbox_loss, embedding_loss = self.get_model_output_and_loss(
-                        batch, train_set=True)
+                        batch, split=1)
                     heatmap_loss = self.cfg["model"]["loss_weight"]["heatmap_head"] * heatmap_loss
                     bbox_loss = bbox_loss_weight * bbox_loss
                     embedding_loss = embedding_loss_weight * embedding_loss
@@ -328,7 +328,7 @@ class SMPTrainer():
                             batch[key] = batch[key].to(self.device)
 
                     output_heatmap, output_bbox, detections, model_encodings, heatmap_loss, bbox_loss, embedding_loss = self.get_model_output_and_loss(
-                        batch, train_set=False)
+                        batch, split=2)
                     groundtruth_list.append(batch['heatmap_sized_bounding_box_list'].cpu())
 
                     if (self.cfg["test_debug"]):
@@ -401,7 +401,7 @@ class SMPTrainer():
                                        test_heatmap_loss=running_test_heatmap_loss / (i + 1),
                                        test_bbox_loss=running_test_bbox_loss / (i + 1),
                                        test_embedding_loss=running_test_embedding_loss / (i + 1))
-
+                """
                 running_test_heatmap_loss /= len(self.test_dataloader)
                 running_test_bbox_loss /= len(self.test_dataloader)
                 running_test_embedding_loss /= len(self.test_dataloader)
@@ -438,7 +438,7 @@ class SMPTrainer():
                                                                              "bbox_heatmap"][:, 1, :,
                                                                          :].cpu().detach().numpy()),
                                        global_step=self.epoch * len(self.test_dataloader) + i)
-
+                """
                 file_save_string = 'test epoch {} -|- global_step {} '.format(self.epoch,
                                                                               self.epoch * len(
                                                                                   self.test_dataloader) + i)
