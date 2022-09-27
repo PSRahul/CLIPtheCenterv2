@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="added the original 3 image overfitting">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/metrics.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/metrics.yaml" afterDir="false" />
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="1. fixed the error where the val set was loaded during test&#10;2. add image saving while running metric.py">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +30,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/psrahul/MasterThesis/repo/Phase5/CLIPtheCenter-overfitting_model&quot;
+    &quot;last_opened_file_path&quot;: &quot;/home/psrahul/MasterThesis/repo/Phase5/PASCALProcessor&quot;
   }
 }</component>
   <component name="RunManager">
@@ -180,7 +179,8 @@
       <workItem from="1664280841576" duration="1161000" />
       <workItem from="1664282428947" duration="195000" />
       <workItem from="1664282635123" duration="704000" />
-      <workItem from="1664293171593" duration="1397000" />
+      <workItem from="1664293171593" duration="6696000" />
+      <workItem from="1664304222625" duration="6252000" />
     </task>
     <task id="LOCAL-00001" summary="added the original 3 image overfitting">
       <created>1664282544330</created>
@@ -189,7 +189,98 @@
       <option name="project" value="LOCAL" />
       <updated>1664282544330</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="working model with 100mAP">
+      <created>1664294849097</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1664294849097</updated>
+    </task>
+    <task id="LOCAL-00003" summary="1. Add checkpoint root_dir&#10;2. Initial config. for PASCAL_3_2_10">
+      <created>1664295902810</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1664295902810</updated>
+    </task>
+    <task id="LOCAL-00004" summary="1. Remove min_visiblity and area in augmentations.py">
+      <created>1664295985324</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1664295985324</updated>
+    </task>
+    <task id="LOCAL-00005" summary="1. Remove min_visiblity and area in augmentations.py&#10;2. Add drop_last=True">
+      <created>1664296130435</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1664296130435</updated>
+    </task>
+    <task id="LOCAL-00006" summary="1. Fix Logging to Epoch ends">
+      <created>1664297407097</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1664297407097</updated>
+    </task>
+    <task id="LOCAL-00007" summary="1. Fix Logging to Epoch ends">
+      <created>1664297415863</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1664297415863</updated>
+    </task>
+    <task id="LOCAL-00008" summary="1. Fix .gitignore">
+      <created>1664299746814</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1664299746814</updated>
+    </task>
+    <task id="LOCAL-00009" summary="1. metric config. for PASCAL_3_2_10">
+      <created>1664299971591</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1664299971591</updated>
+    </task>
+    <task id="LOCAL-00010" summary="1. Changed dataset to PASCAL_3_2_10_SA">
+      <created>1664306569580</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1664306569580</updated>
+    </task>
+    <task id="LOCAL-00011" summary="1. Changed dataset to PASCAL_3_2_10_SA">
+      <created>1664306617688</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1664306617688</updated>
+    </task>
+    <task id="LOCAL-00012" summary="run clip model only after embedding_loss_start_epoch">
+      <created>1664306795077</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1664306795077</updated>
+    </task>
+    <task id="LOCAL-00013" summary="initialise the heatmap and bbox heads">
+      <created>1664307057786</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1664307057786</updated>
+    </task>
+    <task id="LOCAL-00014" summary="1. fixed the error where the val set was loaded during test&#10;2. add image saving while running metric.py">
+      <created>1664311076875</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1664311076875</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,10 +299,27 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="added the original 3 image overfitting" />
-    <option name="LAST_COMMIT_MESSAGE" value="added the original 3 image overfitting" />
+    <MESSAGE value="working model with 100mAP" />
+    <MESSAGE value="1. Add checkpoint root_dir&#10;2. Initial config. for PASCAL_3_2_10" />
+    <MESSAGE value="1. Remove min_visiblity and area in augmentations.py" />
+    <MESSAGE value="1. Remove min_visiblity and area in augmentations.py&#10;2. Add drop_last=True" />
+    <MESSAGE value="1. Fix Logging to Epoch ends" />
+    <MESSAGE value="1. Fix .gitignore" />
+    <MESSAGE value="1. metric config. for PASCAL_3_2_10" />
+    <MESSAGE value="1. Changed dataset to PASCAL_3_2_10_SA" />
+    <MESSAGE value="run clip model only after embedding_loss_start_epoch" />
+    <MESSAGE value="initialise the heatmap and bbox heads" />
+    <MESSAGE value="1. fixed the error where the val set was loaded during test&#10;2. add image saving while running metric.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. fixed the error where the val set was loaded during test&#10;2. add image saving while running metric.py" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1664280796038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$train.coverage" NAME="train Coverage Results" MODIFIED="1664293942270" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$SMP.coverage" NAME="SMP Coverage Results" MODIFIED="1664308279038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/network/model_builder" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$dataset_module.coverage" NAME="dataset_module Coverage Results" MODIFIED="1664296134755" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$SMP_trainer_module.coverage" NAME="SMP_trainer_module Coverage Results" MODIFIED="1664297063896" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trainer" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$dataset_class.coverage" NAME="dataset_class Coverage Results" MODIFIED="1664308792029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$train.coverage" NAME="train Coverage Results" MODIFIED="1664309541201" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$visualise.coverage" NAME="visualise Coverage Results" MODIFIED="1664310857361" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/post_process" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1664310871392" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$augmentations.coverage" NAME="augmentations Coverage Results" MODIFIED="1664295944665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
   </component>
 </project>

@@ -1,31 +1,31 @@
 version: 0
 
-train: True
+train: False
 test: True
 dataset_class_debug: False
 debug: False
-test_debug: True
+test_debug: False
 device: "cuda"
 test_parameters:
   save_test_outputs: True
 trainer:
-  num_epochs: 1000
-  resume_training: False
-  checkpoint_path: "/home/psrahul/MasterThesis/repo/Phase3/CLIPandDetect/trained_models/13092022_2013/model.pth"
-  val_save_interval: 100
+  num_epochs: 500
+  resume_training: True
+  checkpoint_path: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_3_2_10_SA/Unetresnet50/27092022_2126/epoch-499-loss-2.9132633.pth"
+  val_save_interval: 50
   bbox_heatmap_loss: False
   bbox_scatter_loss: True
-  embedding_loss_start_epoch: 600
+  embedding_loss_start_epoch: 300
   bbox_loss_start_epoch: -1
 
 data:
-  train_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_2012_ZETA/base_classes/train/coco/"
-  val_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_2012_ZETA/base_classes/train/coco/"
-  test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_2012_ZETA/base_classes/train/coco/"
+  train_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10_SA/base_classes/train/coco/"
+  val_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10_SA/base_classes/val/coco/"
+  test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10_SA/base_classes/train/coco/"
   train_aug: False
-  train_batch_size: 3
-  val_batch_size: 3
-  test_batch_size: 3
+  train_batch_size: 5
+  val_batch_size: 5
+  test_batch_size: 1
   input_dimension: 320 # EfficientNetB2
   #   input_dimension: 384  ResNet18
 heatmap:
@@ -33,7 +33,7 @@ heatmap:
   radius_scaling: 16
   fix_radius: True
   fix_radius_value: 5
-max_objects_per_image: 1
+max_objects_per_image: 5
 smp:
   model: "Unet" #Unet" #"Unet" #DeepLabV3Plus"
   encoder_name: "resnet50" #"resnet50" #mobilenet_v2"
@@ -79,7 +79,8 @@ model:
     offset_head: 0
     embedding_head: 1
 logging:
-  checkpoint_dir: "outputs/training_debug/"
+  root_dir: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/"
+  checkpoint_dir: "PASCAL_3_2_10_SA"
   display_log_fraction: 1
 evaluation:
   heatmap_pooling_kernel: 3

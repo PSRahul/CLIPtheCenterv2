@@ -13,11 +13,14 @@ def get_binary_masks(cfg, output_roi):
     return mask
 
 
-def get_masked_heatmaps(cfg, roi_heatmap, binary_mask, train_set=True):
-    if (train_set):
+def get_masked_heatmaps(cfg, roi_heatmap, binary_mask, split=0):
+    if (split==0):
         batch_size = cfg["data"]["train_batch_size"]
-    else:
+    if (split == 1):
         batch_size = cfg["data"]["val_batch_size"]
+    if (split == 2):
+        batch_size = cfg["data"]["test_batch_size"]
+
     masked_roi_heatmaps = torch.zeros_like(binary_mask, device="cuda")
     for batch_index in range(batch_size):
         for detection_index in range(cfg["evaluation"]["topk_k"]):
