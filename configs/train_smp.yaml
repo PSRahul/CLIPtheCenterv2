@@ -21,7 +21,7 @@ trainer:
 data:
   train_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/train/coco/"
   val_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/val/coco/"
-  test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/train/coco/"
+  test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/val/coco/"
   train_aug: False
   train_batch_size: 5
   val_batch_size: 5
@@ -84,4 +84,5 @@ logging:
   display_log_fraction: 1
 evaluation:
   heatmap_pooling_kernel: 3
-  topk_k: 256
+  topk_k: 5
+  test_topk_k: 256

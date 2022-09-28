@@ -322,6 +322,7 @@ class SMPTrainer():
         running_test_bbox_loss = 0.0
         running_test_embedding_loss = 0.0
         running_test_loss = 0.0
+        self.cfg["evaluation"]["topk_k"]=self.cfg["evaluation"]["test_topk_k"]
         self.optimizer.zero_grad()
         with torch.no_grad():
 
