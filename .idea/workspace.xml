@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="add debug line">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="change batch size to 12">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/heads/heatmap_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/heads/heatmap_head.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -435,7 +435,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664372717168</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="change batch size to 12">
+      <created>1664373148210</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1664373148210</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -452,7 +459,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="pascal_3_2" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -492,12 +499,12 @@
     <MESSAGE value="working multiclass training" />
     <MESSAGE value="add base and novel class data" />
     <MESSAGE value="working config. for PASCAL_3_2" />
-    <MESSAGE value="change batch size to 12" />
     <MESSAGE value="change batch size to 24" />
     <MESSAGE value="change batch size to 48" />
     <MESSAGE value="change batch size to 8" />
     <MESSAGE value="add debug line" />
-    <option name="LAST_COMMIT_MESSAGE" value="add debug line" />
+    <MESSAGE value="change batch size to 12" />
+    <option name="LAST_COMMIT_MESSAGE" value="change batch size to 12" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
