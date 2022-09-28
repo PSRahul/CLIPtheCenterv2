@@ -94,8 +94,9 @@ class SMPModel(nn.Module):
             model_encodings_normalised = model_encodings / model_encodings.norm(dim=-1, keepdim=True)
         else:
             clip_encoding=torch.ones((1,1))
-            model_encodings_normalised=torch.zeros((1,1))
-        return output_heatmap, output_bbox, detections, clip_encoding, model_encodings_normalised
+            model_encodings_normalised=torch.ones((1,1))
+            detections_adjusted=detections
+        return output_heatmap, output_bbox, detections_adjusted, clip_encoding, model_encodings_normalised
 
     def forward_summary(self, image):
         x = self.encoder_decoder_model(image)
