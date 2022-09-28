@@ -223,6 +223,8 @@ class SMPTrainer():
                     for key, value in batch.items():
                         if key != "image_path":
                             batch[key] = batch[key].to(self.device)
+
+                    print(batch["image_id"].shape)
                     # 10
                     self.model.train()
                     self.optimizer.zero_grad()
