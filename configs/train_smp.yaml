@@ -11,7 +11,7 @@ test_parameters:
 trainer:
   num_epochs: 600
   resume_training: False
-  checkpoint_path: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_3_2_10_SA/Unetresnet50/27092022_2253/epoch-299-loss-3.5647217.pth"
+  checkpoint_path: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_3_2_10/Unetresnet50/27092022_2253/epoch-299-loss-3.5647217.pth"
   val_save_interval: 50
   bbox_heatmap_loss: False
   bbox_scatter_loss: True
@@ -19,9 +19,9 @@ trainer:
   bbox_loss_start_epoch: -1
 
 data:
-  train_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10_SA/base_classes/train/coco/"
-  val_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10_SA/base_classes/val/coco/"
-  test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10_SA/base_classes/train/coco/"
+  train_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/train/coco/"
+  val_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/val/coco/"
+  test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2_10/base_classes/train/coco/"
   train_aug: False
   train_batch_size: 5
   val_batch_size: 5
@@ -80,8 +80,8 @@ model:
     embedding_head: 1
 logging:
   root_dir: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/"
-  checkpoint_dir: "PASCAL_3_2_10_SA"
+  checkpoint_dir: "PASCAL_3_2_10"
   display_log_fraction: 1
 evaluation:
   heatmap_pooling_kernel: 3
-  topk_k: 1
+  topk_k: 5

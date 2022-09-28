@@ -98,7 +98,8 @@ class SMPTrainer():
                                                              device=self.device)
 
         embedding_loss = calculate_embedding_loss(predicted_embedding=model_encodings.to(device=self.device),
-                                                  groundtruth_embedding=clip_encoding.to(device=self.device))
+                                                  groundtruth_embedding=clip_encoding.to(device=self.device),
+                                                  num_objects=batch['num_objects'])
 
         return output_heatmap, output_bbox, detections, model_encodings, heatmap_loss, bbox_loss, embedding_loss
 
