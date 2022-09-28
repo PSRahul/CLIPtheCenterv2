@@ -1,6 +1,6 @@
 version: 0
 
-train: False
+train: True
 test: True
 dataset_class_debug: False
 debug: False
@@ -10,7 +10,7 @@ test_parameters:
   save_test_outputs: True
 trainer:
   num_epochs: 600
-  resume_training: True
+  resume_training: False
   checkpoint_path: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_3_2_10/Unetresnet50/28092022_1031/epoch-599-loss-7.8278679.pth"
   val_save_interval: 50
   bbox_heatmap_loss: False

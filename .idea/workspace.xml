@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="working multiclass training">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/metrics.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/metrics.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer/SMP_trainer_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainer/SMP_trainer_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +13,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="10_image_overfitting_sa" />
+        <entry key="$PROJECT_DIR$" value="10_image_overfitting" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -232,7 +230,7 @@
       <workItem from="1664282428947" duration="195000" />
       <workItem from="1664282635123" duration="704000" />
       <workItem from="1664293171593" duration="6696000" />
-      <workItem from="1664304222625" duration="24522000" />
+      <workItem from="1664304222625" duration="25385000" />
     </task>
     <task id="LOCAL-00001" summary="added the original 3 image overfitting">
       <created>1664282544330</created>
@@ -381,7 +379,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664362779332</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="working multiclass training">
+      <created>1664363380494</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1664363380494</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,8 +471,8 @@
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$SMP_trainer_module.coverage" NAME="SMP_trainer_module Coverage Results" MODIFIED="1664312004747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trainer" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$dataset_class.coverage" NAME="dataset_class Coverage Results" MODIFIED="1664308792029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$visualise.coverage" NAME="visualise Coverage Results" MODIFIED="1664314530347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/post_process" />
-    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1664363113225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$train.coverage" NAME="train Coverage Results" MODIFIED="1664363237693" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1664363654326" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$train.coverage" NAME="train Coverage Results" MODIFIED="1664363714757" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$augmentations.coverage" NAME="augmentations Coverage Results" MODIFIED="1664295944665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
   </component>
 </project>
