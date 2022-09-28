@@ -3,7 +3,7 @@ from pycocotools.cocoeval import COCOeval
 import numpy as np
 
 
-def calculate_coco_result(gt, prediction, image_index_only, image_index):
+def calculate_coco_result(gt, prediction, image_index_only, image_index,useCats):
     annType = 'bbox'
     if image_index_only:
         prediction = prediction[prediction[:, 0] == image_index]
@@ -12,6 +12,7 @@ def calculate_coco_result(gt, prediction, image_index_only, image_index):
     coco_gt = COCO(gt)
     coco_dt = coco_gt.loadRes(prediction)
     coco_eval = COCOeval(coco_gt, coco_dt, annType)
+    coco_eval.params.useCats=useCats
     if image_index_only:
         coco_eval.params.imgIds = image_index
 
