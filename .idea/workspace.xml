@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="change batch size to 12">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="fix divide by zero error in heatmap_head.py">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/heads/heatmap_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/heads/heatmap_head.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -442,7 +442,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664373148210</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="fix divide by zero error in heatmap_head.py">
+      <created>1664381357988</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1664381357988</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -479,7 +486,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added the original 3 image overfitting" />
     <MESSAGE value="working model with 100mAP" />
     <MESSAGE value="1. Add checkpoint root_dir&#10;2. Initial config. for PASCAL_3_2_10" />
     <MESSAGE value="1. Remove min_visiblity and area in augmentations.py" />
@@ -504,7 +510,8 @@
     <MESSAGE value="change batch size to 8" />
     <MESSAGE value="add debug line" />
     <MESSAGE value="change batch size to 12" />
-    <option name="LAST_COMMIT_MESSAGE" value="change batch size to 12" />
+    <MESSAGE value="fix divide by zero error in heatmap_head.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix divide by zero error in heatmap_head.py" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
