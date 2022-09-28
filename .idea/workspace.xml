@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="change batch size to 8">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="add debug line">
       <change beforePath="$PROJECT_DIR$/trainer/SMP_trainer_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainer/SMP_trainer_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -229,7 +229,7 @@
       <workItem from="1664282428947" duration="195000" />
       <workItem from="1664282635123" duration="704000" />
       <workItem from="1664293171593" duration="6696000" />
-      <workItem from="1664304222625" duration="28427000" />
+      <workItem from="1664304222625" duration="28718000" />
     </task>
     <task id="LOCAL-00001" summary="added the original 3 image overfitting">
       <created>1664282544330</created>
@@ -427,7 +427,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664372514021</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="add debug line">
+      <created>1664372717168</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1664372717168</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,7 +451,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="main" />
+                        <option value="pascal_3_2" />
                       </list>
                     </value>
                   </entry>
@@ -488,7 +495,8 @@
     <MESSAGE value="change batch size to 24" />
     <MESSAGE value="change batch size to 48" />
     <MESSAGE value="change batch size to 8" />
-    <option name="LAST_COMMIT_MESSAGE" value="change batch size to 8" />
+    <MESSAGE value="add debug line" />
+    <option name="LAST_COMMIT_MESSAGE" value="add debug line" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -500,7 +508,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/trainer/SMP_trainer_module.py</url>
-          <line>354</line>
+          <line>353</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
