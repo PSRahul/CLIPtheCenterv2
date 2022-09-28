@@ -9,8 +9,8 @@ device: "cuda"
 test_parameters:
   save_test_outputs: True
 trainer:
-  num_epochs: 500
-  resume_training: True
+  num_epochs: 600
+  resume_training: False
   checkpoint_path: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_3_2_10_SA/Unetresnet50/27092022_2253/epoch-299-loss-3.5647217.pth"
   val_save_interval: 50
   bbox_heatmap_loss: False
