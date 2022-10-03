@@ -85,4 +85,4 @@ logging:
 evaluation:
   heatmap_pooling_kernel: 3
   topk_k: 5
-  test_topk_k: 256
+  test_topk_k: 5
