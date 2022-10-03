@@ -2,7 +2,7 @@ import numpy as np
 import pandas as pd
 import torch
 from torchvision.ops import nms
-
+from tqdm import tqdm
 
 def perform_nms(cfg, prediction):
     columns = [["image_id", "bbox_x", "bbox_y", "w", "h", "score", "class_label"]]
@@ -12,7 +12,7 @@ def perform_nms(cfg, prediction):
     df["bbox_x+w"] = df["bbox_x"].values + df["w"].values
     df["bbox_y+h"] = df["bbox_y"].values + df["h"].values
     filtered_predictions = np.empty((0, 519))
-    for image_id in image_id_list:
+    for image_id in tqdm(image_id_list):
         id_mask = df["image_id"].values == image_id
         df_id = df[id_mask]
         id_mask = list(id_mask[:, 0])

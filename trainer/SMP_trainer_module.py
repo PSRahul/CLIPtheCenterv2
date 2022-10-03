@@ -399,8 +399,8 @@ class SMPTrainer():
                     if (self.cfg["test_parameters"]["save_test_outputs"]):
                         save_test_outputs(self.checkpoint_dir, batch, output_heatmap.cpu().detach().numpy(),
                                           output_bbox.cpu().detach().numpy())
-                    detections_list.append(detections)
-                    embeddings_list.append(model_encodings)
+                    detections_list.append(detections.cpu())
+                    embeddings_list.append(model_encodings.cpu())
 
 
 

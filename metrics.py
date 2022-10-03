@@ -66,7 +66,7 @@ def set_logging(cfg):
 
 def get_groundtruths(dataset, show_image=False):
     gt = np.empty((0, 7))
-    for index in range(len(dataset)):
+    for index in tqdm(range(len(dataset))):
         image_id = dataset.ids[index]
         image, anns = dataset[index]
         image = np.array(image)
@@ -100,7 +100,6 @@ def main(cfg):
     dataset_root = cfg["data"]["root"]
     dataset = CocoDetection(root=os.path.join(dataset_root, "data"),
                             annFile=os.path.join(dataset_root, "labels.json"))
-    clip_embedding = np.load(cfg["clip_embedding_path"])
 
     if (cfg["use_metric_data_path"]):
         print("Loading data from ", cfg["metric_data_path"])
@@ -126,8 +125,19 @@ def main(cfg):
     print("GroundTruth Shape", gt.shape)
     print("Prediction Shape", prediction.shape)
     print("Prediction with NMS Shape", prediction_with_nms.shape)
+    class_name_list = []
+    class_id_list = []
+    for index in tqdm(range(len(dataset.coco.cats))):
+        cat = dataset.coco.cats[index]
+        class_id_list.append(cat["id"])
+        class_name_list.append(cat["name"])
+    if(cfg["generate_clip_embedding"]):
+        pass
+    else:
+        clip_embedding = np.load(cfg["clip_embedding_path"])
 
     prediction_with_nms_resized = assign_classes(clip_embedding, prediction_with_nms_resized)
+
     # calculate_torchmetrics_mAP(gt, prediction_with_nms_resized)
     print("-------------------------------------")
     print("WITHOUT CATEGORY LABELS")

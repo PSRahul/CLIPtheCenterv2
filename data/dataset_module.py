@@ -38,4 +38,4 @@ class DataModule():
         return DataLoader(self.load_val_dataset(),drop_last=True, batch_size=self.cfg["data"]["val_batch_size"], shuffle=True)
 
     def load_test_dataloader(self):
-        return DataLoader(self.load_test_dataset(),batch_size=self.cfg["data"]["test_batch_size"], shuffle=False)
+        return DataLoader(self.load_test_dataset(),batch_size=self.cfg["data"]["test_batch_size"],shuffle=False)
