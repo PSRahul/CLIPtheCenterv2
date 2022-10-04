@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="add scatter and full loss to both">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="add staggered training">
       <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -570,7 +569,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664920366686</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="add staggered training">
+      <created>1664920433822</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1664920433822</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -607,7 +613,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Make BBoxLoss and EmbeddingLoss work with multiple objects" />
     <MESSAGE value="Testing the trained MA model" />
     <MESSAGE value="working multiclass training" />
     <MESSAGE value="add base and novel class data" />
@@ -632,7 +637,8 @@
     <MESSAGE value="increase batch to 64" />
     <MESSAGE value="change to adadelta" />
     <MESSAGE value="add scatter and full loss to both" />
-    <option name="LAST_COMMIT_MESSAGE" value="add scatter and full loss to both" />
+    <MESSAGE value="add staggered training" />
+    <option name="LAST_COMMIT_MESSAGE" value="add staggered training" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
