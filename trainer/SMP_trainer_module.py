@@ -45,10 +45,10 @@ class SMPTrainer():
     def set_training_parameters(self):
         self.optimizer = optim.Adam(self.model.parameters(), lr=1e-5)
 
-    def load_checkpoint(self):
+    def load_checkpoint(self,key="train_checkpoint"):
         # TODO: The training losses do not adjust after loading
-        checkpoint = torch.load(self.cfg["trainer"]["checkpoint_path"])
-        print("Loaded Trainer State from ", self.cfg["trainer"]["checkpoint_path"])
+        checkpoint = torch.load(self.cfg["trainer"][key])
+        print("Loaded Trainer State from ", self.cfg["trainer"][key])
         self.model.load_state_dict(checkpoint['model_state_dict'])
         self.optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
         for state in self.optimizer.state.values():
@@ -324,6 +324,7 @@ class SMPTrainer():
         running_test_embedding_loss = 0.0
         running_test_loss = 0.0
         self.cfg["evaluation"]["topk_k"]=self.cfg["evaluation"]["test_topk_k"]
+        self.load_checkpoint(key="test_checkpoint")
         self.optimizer.zero_grad()
         with torch.no_grad():
 

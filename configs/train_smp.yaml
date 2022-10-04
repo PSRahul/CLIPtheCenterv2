@@ -1,6 +1,6 @@
 version: 0
 
-train: False
+train: True
 test: True
 dataset_class_debug: False
 debug: False
@@ -9,9 +9,10 @@ device: "cuda"
 test_parameters:
   save_test_outputs: False
 trainer:
-  num_epochs: 100
-  resume_training: True
-  checkpoint_path: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_3_2/Unetresnet50/28092022_1948/epoch-99-loss-2.7323529.pth"
+  num_epochs: 300
+  resume_training: False
+  train_checkpoint: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_3_2/Unetresnet50/28092022_1948/epoch-99-loss-2.7323529.pth"
+  test_checkpoint: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_3_2/Unetresnet50/28092022_1948/epoch-99-loss-2.7323529.pth"
   val_save_interval: 5
   bbox_heatmap_loss: False
   bbox_scatter_loss: True
@@ -19,13 +20,13 @@ trainer:
   bbox_loss_start_epoch: -1
 
 data:
-  train_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2/base_classes/train/coco/"
-  val_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2/base_classes/val/coco/"
-  test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2/base_classes/train/coco/"
+  train_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_15_5/base_classes/train/coco/"
+  val_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_15_5/base_classes/val/coco/"
+  test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_15_5/base_classes/train/coco/"
   train_aug: False
   train_batch_size: 4 #10
   val_batch_size: 4 #10
-  test_batch_size: 1  #10
+  test_batch_size: 4  #10
   input_dimension: 320 # EfficientNetB2
   #   input_dimension: 384  ResNet18
 heatmap:
@@ -80,7 +81,7 @@ model:
     embedding_head: 1
 logging:
   root_dir: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/"
-  checkpoint_dir: "PASCAL_3_2/Inference"
+  checkpoint_dir: "PASCAL_3_2/Training"
   display_log_fraction: 1
 evaluation:
   heatmap_pooling_kernel: 3
