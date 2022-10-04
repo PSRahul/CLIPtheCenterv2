@@ -43,7 +43,7 @@ class SMPTrainer():
         self.f.close()
 
     def set_training_parameters(self):
-        self.optimizer = optim.Adam(self.model.parameters(), lr=1e-5)
+        self.optimizer = optim.Adadelta(self.model.parameters())
 
     def load_checkpoint(self,key="train_checkpoint"):
         # TODO: The training losses do not adjust after loading
