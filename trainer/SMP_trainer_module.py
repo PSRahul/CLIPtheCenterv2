@@ -97,11 +97,16 @@ class SMPTrainer():
                                                                  flattened_index=batch['flattened_index'],
                                                                  num_objects=batch['num_objects'],
                                                                  device=self.device)
-
-            embedding_loss = calculate_embedding_loss(predicted_embedding=model_encodings.to(device=self.device),
+            if (self.epoch > self.cfg["trainer"]["embedding_loss_start_epoch"]):
+                embedding_loss = calculate_embedding_loss(predicted_embedding=model_encodings.to(device=self.device),
                                                       groundtruth_embedding=clip_encoding.to(device=self.device),
                                                       flattened_index=batch['flattened_index'],
                                                       num_objects=batch['num_objects'])
+            else:
+                embedding_loss = calculate_embedding_loss(predicted_embedding=torch.ones((self.cfg["data"]["train_batch_size"]*self.cfg["evaluation"]["topk_k"],1)).to(device=self.device),
+                                                          groundtruth_embedding=torch.ones((self.cfg["data"]["train_batch_size"]*self.cfg["evaluation"]["topk_k"],1)).to(device=self.device),
+                                                          flattened_index=batch['flattened_index'],
+                                                          num_objects=batch['num_objects'])
 
         else:
             heatmap_loss, bbox_loss, embedding_loss=0,0,0

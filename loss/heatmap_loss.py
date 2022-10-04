@@ -6,11 +6,7 @@ heatmap_loss_fn = segmentation_models_pytorch.losses.FocalLoss(mode="binary")
 
 
 
-def calculate_heatmap_loss(predicted_heatmap, groundtruth_heatmap):
 
-    heatmap_loss = torch.nn.functional.mse_loss(input=predicted_heatmap.float(), target=groundtruth_heatmap.float(),
-                                                reduction='mean')
-    return heatmap_loss
 
 def calculate_heatmap_loss(predicted_heatmap, groundtruth_heatmap):
     # heatmap_loss = torchvision.ops.sigmoid_focal_loss(inputs=predicted_heatmap, targets=groundtruth_heatmap,
@@ -25,4 +21,10 @@ def calculate_heatmap_loss(predicted_heatmap, groundtruth_heatmap):
     # groundtruth_heatmap = groundtruth_heatmap * gradient_mask
     # heatmap_loss = torch.nn.functional.mse_loss(input=predicted_heatmap.float(), target=groundtruth_heatmap.float(),
     #                                            reduction='mean')
+    return heatmap_loss
+
+def calculate_heatmap_loss(predicted_heatmap, groundtruth_heatmap):
+
+    heatmap_loss = torch.nn.functional.mse_loss(input=predicted_heatmap.float(), target=groundtruth_heatmap.float(),
+                                                reduction='mean')
     return heatmap_loss
