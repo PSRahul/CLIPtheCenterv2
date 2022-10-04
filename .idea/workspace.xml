@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="add staggered training">
-      <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="disable center heatmap loss">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/data_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/data_utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -576,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664920433822</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="disable center heatmap loss">
+      <created>1664920781560</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1664920781560</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -613,7 +621,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Testing the trained MA model" />
     <MESSAGE value="working multiclass training" />
     <MESSAGE value="add base and novel class data" />
     <MESSAGE value="working config. for PASCAL_3_2" />
@@ -638,7 +645,8 @@
     <MESSAGE value="change to adadelta" />
     <MESSAGE value="add scatter and full loss to both" />
     <MESSAGE value="add staggered training" />
-    <option name="LAST_COMMIT_MESSAGE" value="add staggered training" />
+    <MESSAGE value="disable center heatmap loss" />
+    <option name="LAST_COMMIT_MESSAGE" value="disable center heatmap loss" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
