@@ -8,7 +8,7 @@ from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 
 from loss.bbox_loss import calculate_bbox_loss_without_heatmap, calculate_bbox_loss_with_heatmap
-from loss.heatmap_loss import calculate_heatmap_loss
+from loss.heatmap_loss import calculate_heatmap_loss,calculate_heatmap_scatter_loss
 from loss.offset_loss import calculate_offset_loss
 from trainer.trainer_visualisation import plot_heatmaps, save_test_outputs
 from loss.similarity_loss import calculate_embedding_loss
@@ -83,8 +83,23 @@ class SMPTrainer():
             batch,self.epoch, split)
         output_heatmap = output_heatmap.squeeze(dim=1).to(self.device)
         if(inference_only==0):
-            heatmap_loss = calculate_heatmap_loss(output_heatmap, batch["center_heatmap"])
             bbox_loss = 0
+            heatmap_loss=0
+            if (self.cfg["trainer"]["center_heatmap_loss"]):
+                heatmap_loss += calculate_heatmap_loss(output_heatmap, batch["center_heatmap"])
+
+            if (self.cfg["trainer"]["center_scatter_loss"]):
+                predicted_center=copy.deepcopy(detections[:,1:5])
+                predicted_center[:,0]+=predicted_center[:,2]/2
+                predicted_center[:, 1] += predicted_center[:, 3] / 2
+                predicted_center=predicted_center[:,0:2]
+                predicted_center=predicted_center.reshape(batch['bbox'].shape)
+                heatmap_loss+=calculate_heatmap_scatter_loss(predicted_heatmap=predicted_center,
+                                                              groundtruth_heatmap=batch['object_center'],
+                                                              flattened_index=batch['flattened_index'],
+                                                              num_objects=batch['num_objects'],
+                                                              device=self.device)
+
             if (self.cfg["trainer"]["bbox_heatmap_loss"]):
                 bbox_loss += calculate_bbox_loss_with_heatmap(predicted_bbox=output_bbox,
                                                               groundtruth_bbox=batch['bbox_heatmap'],

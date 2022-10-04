@@ -100,6 +100,7 @@ class CocoDetection(VisionDataset):
 
     def __getitem__(self, index):
         image_id = self.ids[index]
+        object_center_np=np.zeros((self.cfg["max_objects_per_image"],2))
         path, image, bounding_box_list, class_list, original_image_shape = self.get_transformed_image(index)
         heatmap_sized_image, heatmap_sized_bounding_box_list, heatmap_sized_class_list = self.get_heatmap_sized_image(
             image,
@@ -119,6 +120,7 @@ class CocoDetection(VisionDataset):
         num_objects = 0
         for heatmap_sized_bounding_box in heatmap_sized_bounding_box_list:
             center_heatmap_i, bbox_heatmap_i, bbox_center = create_heatmap_object(self.cfg, heatmap_sized_bounding_box)
+            object_center_np[num_objects,:]=bbox_center
             np.maximum(center_heatmap, center_heatmap_i, out=center_heatmap)
             np.maximum(bbox_heatmap, bbox_heatmap_i, out=bbox_heatmap)
             bbox[num_objects] = int(heatmap_sized_bounding_box[2]), int(heatmap_sized_bounding_box[3])
@@ -154,6 +156,7 @@ class CocoDetection(VisionDataset):
         batch_item['center_heatmap'] = torch.from_numpy(center_heatmap)
         batch_item['bbox_heatmap'] = torch.from_numpy(bbox_heatmap)
         batch_item['bbox'] = torch.from_numpy(bbox)
+        batch_item['object_center'] = torch.from_numpy(object_center_np)
         batch_item['flattened_index'] = torch.from_numpy(flattened_index)
         batch_item['num_objects'] = torch.tensor(num_objects)
         if (self.cfg["debug"]):
