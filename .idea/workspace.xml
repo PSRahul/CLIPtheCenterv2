@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="config. for PASCAL_15_5 training">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="change batch size to 64, num_workers to 32">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/dataset_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/dataset_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/scripts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/scripts.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -238,7 +236,7 @@
       <workItem from="1664813041050" duration="6485000" />
       <workItem from="1664868416263" duration="698000" />
       <workItem from="1664874544570" duration="834000" />
-      <workItem from="1664876819651" duration="5168000" />
+      <workItem from="1664876819651" duration="5296000" />
     </task>
     <task id="LOCAL-00001" summary="added the original 3 image overfitting">
       <created>1664282544330</created>
@@ -499,7 +497,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664882391628</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="change batch size to 64, num_workers to 32">
+      <created>1664883332005</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1664883332005</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +541,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1. metric config. for PASCAL_3_2_10" />
     <MESSAGE value="1. Changed dataset to PASCAL_3_2_10_SA" />
     <MESSAGE value="run clip model only after embedding_loss_start_epoch" />
     <MESSAGE value="initialise the heatmap and bbox heads" />
@@ -561,7 +565,8 @@
     <MESSAGE value="working training setup for server" />
     <MESSAGE value="add augmentations.py" />
     <MESSAGE value="config. for PASCAL_15_5 training" />
-    <option name="LAST_COMMIT_MESSAGE" value="config. for PASCAL_15_5 training" />
+    <MESSAGE value="change batch size to 64, num_workers to 32" />
+    <option name="LAST_COMMIT_MESSAGE" value="change batch size to 64, num_workers to 32" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
