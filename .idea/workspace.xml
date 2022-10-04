@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="change to adadelta">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="add scatter and full loss to both">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
     </list>
@@ -563,7 +563,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664919121057</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="add scatter and full loss to both">
+      <created>1664920366686</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1664920366686</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -600,7 +607,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Make BBox work with multiple objects" />
     <MESSAGE value="Make BBoxLoss and EmbeddingLoss work with multiple objects" />
     <MESSAGE value="Testing the trained MA model" />
     <MESSAGE value="working multiclass training" />
@@ -625,7 +631,8 @@
     <MESSAGE value="increase the layers in the head" />
     <MESSAGE value="increase batch to 64" />
     <MESSAGE value="change to adadelta" />
-    <option name="LAST_COMMIT_MESSAGE" value="change to adadelta" />
+    <MESSAGE value="add scatter and full loss to both" />
+    <option name="LAST_COMMIT_MESSAGE" value="add scatter and full loss to both" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

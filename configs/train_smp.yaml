@@ -18,8 +18,8 @@ trainer:
   center_heatmap_loss: True
   bbox_heatmap_loss: True
   bbox_scatter_loss: True
-  embedding_loss_start_epoch: 200
-  bbox_loss_start_epoch: -1
+  embedding_loss_start_epoch: 150
+  bbox_loss_start_epoch: 50
 
 data:
   train_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_15_5_1500/base_classes/train/coco/"
@@ -77,7 +77,7 @@ model:
     output_num_filter: [ 64,2 ]
     kernel_size: [ 3,1 ]
   loss_weight:
-    heatmap_head: 1
+    heatmap_head: 10
     bbox_head: 1
     offset_head: 0
     embedding_head: 1
