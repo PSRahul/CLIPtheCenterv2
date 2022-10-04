@@ -24,9 +24,9 @@ data:
   val_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_15_5/base_classes/val/coco/"
   test_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_15_5/base_classes/train/coco/"
   train_aug: False
-  train_batch_size: 4 #10
-  val_batch_size: 4 #10
-  test_batch_size: 1  #10
+  train_batch_size: 32 #10
+  val_batch_size: 32 #10
+  test_batch_size: 32  #10
   input_dimension: 320 # EfficientNetB2
   #   input_dimension: 384  ResNet18
 heatmap:
@@ -81,7 +81,7 @@ model:
     embedding_head: 1
 logging:
   root_dir: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/"
-  checkpoint_dir: "PASCAL_3_2/Training"
+  checkpoint_dir: "PASCAL_15_5/Training"
   display_log_fraction: 1
 evaluation:
   heatmap_pooling_kernel: 3
