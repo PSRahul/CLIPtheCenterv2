@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="num_workers to 32">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="working PASCAL_15_5_1500 training with scatter heatmap loss">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/dataset_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/dataset_class.py" afterDir="false" />
@@ -532,7 +532,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664888877904</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="working PASCAL_15_5_1500 training with scatter heatmap loss">
+      <created>1664918037497</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1664918037497</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +576,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="initialise the heatmap and bbox heads" />
     <MESSAGE value="1. fixed the error where the val set was loaded during test&#10;2. add image saving while running metric.py" />
     <MESSAGE value="88 mAP on 10 images" />
     <MESSAGE value="90 mAP on 10 images" />
@@ -594,7 +600,8 @@
     <MESSAGE value="change batch size to 64, num_workers to 32" />
     <MESSAGE value="num_workers to 16" />
     <MESSAGE value="num_workers to 32" />
-    <option name="LAST_COMMIT_MESSAGE" value="num_workers to 32" />
+    <MESSAGE value="working PASCAL_15_5_1500 training with scatter heatmap loss" />
+    <option name="LAST_COMMIT_MESSAGE" value="working PASCAL_15_5_1500 training with scatter heatmap loss" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
