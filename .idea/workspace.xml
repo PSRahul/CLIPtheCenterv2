@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="increase batch to 64">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="change to adadelta">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer/SMP_trainer_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainer/SMP_trainer_module.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -556,7 +556,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664918557767</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="change to adadelta">
+      <created>1664919121057</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1664919121057</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +600,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="90 mAP on 10 images" />
     <MESSAGE value="Make BBox work with multiple objects" />
     <MESSAGE value="Make BBoxLoss and EmbeddingLoss work with multiple objects" />
     <MESSAGE value="Testing the trained MA model" />
@@ -618,7 +624,8 @@
     <MESSAGE value="working PASCAL_15_5_1500 training with scatter heatmap loss" />
     <MESSAGE value="increase the layers in the head" />
     <MESSAGE value="increase batch to 64" />
-    <option name="LAST_COMMIT_MESSAGE" value="increase batch to 64" />
+    <MESSAGE value="change to adadelta" />
+    <option name="LAST_COMMIT_MESSAGE" value="change to adadelta" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
