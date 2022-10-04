@@ -4,10 +4,8 @@
     <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="working PASCAL_15_5_1500 training with scatter heatmap loss">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/dataset_class.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/dataset_class.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/loss/heatmap_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/loss/heatmap_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/network/heads/bbox_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/heads/bbox_head.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/network/heads/heatmap_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/heads/heatmap_head.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trainer/SMP_trainer_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainer/SMP_trainer_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -539,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664918037497</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="working PASCAL_15_5_1500 training with scatter heatmap loss">
+      <created>1664918156881</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1664918156881</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -662,7 +667,7 @@
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$dataset_class.coverage" NAME="dataset_class Coverage Results" MODIFIED="1664308792029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$visualise.coverage" NAME="visualise Coverage Results" MODIFIED="1664314530347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/post_process" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1664823025348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$train.coverage" NAME="train Coverage Results" MODIFIED="1664916352236" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$train.coverage" NAME="train Coverage Results" MODIFIED="1664918433796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$augmentations.coverage" NAME="augmentations Coverage Results" MODIFIED="1664295944665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
   </component>
 </project>
