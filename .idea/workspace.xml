@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="num_workers to 16">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="num_workers to 32">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/dataset_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/data/dataset_module.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/scripts.txt" beforeDir="false" afterPath="$PROJECT_DIR$/docker/scripts.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -237,7 +235,7 @@
       <workItem from="1664813041050" duration="6485000" />
       <workItem from="1664868416263" duration="698000" />
       <workItem from="1664874544570" duration="834000" />
-      <workItem from="1664876819651" duration="6149000" />
+      <workItem from="1664876819651" duration="7462000" />
     </task>
     <task id="LOCAL-00001" summary="added the original 3 image overfitting">
       <created>1664282544330</created>
@@ -512,7 +510,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664883456706</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="num_workers to 32">
+      <created>1664884305070</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1664884305070</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -549,7 +554,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="run clip model only after embedding_loss_start_epoch" />
     <MESSAGE value="initialise the heatmap and bbox heads" />
     <MESSAGE value="1. fixed the error where the val set was loaded during test&#10;2. add image saving while running metric.py" />
     <MESSAGE value="88 mAP on 10 images" />
@@ -574,7 +578,8 @@
     <MESSAGE value="config. for PASCAL_15_5 training" />
     <MESSAGE value="change batch size to 64, num_workers to 32" />
     <MESSAGE value="num_workers to 16" />
-    <option name="LAST_COMMIT_MESSAGE" value="num_workers to 16" />
+    <MESSAGE value="num_workers to 32" />
+    <option name="LAST_COMMIT_MESSAGE" value="num_workers to 32" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
