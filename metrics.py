@@ -18,7 +18,7 @@ from post_process.torchmetric_evaluation import calculate_torchmetrics_mAP
 from post_process.nms import perform_nms
 from post_process.utils import resize_predictions_image_size, assign_classes
 from post_process.visualise import visualise_bbox
-
+from post_process.get_clip_embedding import generate_clip_embedding
 
 # matplotlib.use('Agg')
 
@@ -108,6 +108,8 @@ def main(cfg):
         prediction = data["prediction"]
         prediction_with_nms = data["prediction_with_nms"]
         prediction_with_nms_resized = data["prediction_with_nms_resized"]
+        if not cfg["perform_nms"]:
+            prediction_with_nms = prediction
     else:
         gt = get_groundtruths(dataset)
         prediction = np.load(cfg["prediction_path"])
@@ -132,7 +134,7 @@ def main(cfg):
         class_id_list.append(cat["id"])
         class_name_list.append(cat["name"])
     if(cfg["generate_clip_embedding"]):
-        pass
+        clip_embedding=generate_clip_embedding(cfg,checkpoint_dir,class_id_list,class_name_list)
     else:
         clip_embedding = np.load(cfg["clip_embedding_path"])
 

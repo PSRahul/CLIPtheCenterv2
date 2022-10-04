@@ -3,6 +3,7 @@ import torch
 import torchvision
 
 
+
 def calculate_embedding_loss(predicted_embedding, groundtruth_embedding,flattened_index, num_objects):
     object_boolean_mask = torch.zeros((flattened_index.shape), device="cuda")
     for i in range(object_boolean_mask.shape[0]):
