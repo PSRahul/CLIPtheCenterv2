@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="change to 10000 epochs">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="change to resnet">
       <change beforePath="$PROJECT_DIR$/trainer/SMP_trainer_module.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainer/SMP_trainer_module.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -241,13 +239,6 @@
       <workItem from="1664868416263" duration="698000" />
       <workItem from="1664874544570" duration="834000" />
       <workItem from="1664876819651" duration="14775000" />
-    </task>
-    <task id="LOCAL-00005" summary="1. Remove min_visiblity and area in augmentations.py&#10;2. Add drop_last=True">
-      <created>1664296130435</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1664296130435</updated>
     </task>
     <task id="LOCAL-00006" summary="1. Fix Logging to Epoch ends">
       <created>1664297407097</created>
@@ -585,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664959834756</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="change to resnet">
+      <created>1664961143896</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1664961143896</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -622,7 +620,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change batch size to 48" />
     <MESSAGE value="change batch size to 8" />
     <MESSAGE value="add debug line" />
     <MESSAGE value="change batch size to 12" />
@@ -647,7 +644,8 @@
     <MESSAGE value="change to adam" />
     <MESSAGE value="add orginal heatmap processing" />
     <MESSAGE value="change to 10000 epochs" />
-    <option name="LAST_COMMIT_MESSAGE" value="change to 10000 epochs" />
+    <MESSAGE value="change to resnet" />
+    <option name="LAST_COMMIT_MESSAGE" value="change to resnet" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
