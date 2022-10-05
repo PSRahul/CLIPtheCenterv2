@@ -14,8 +14,8 @@ trainer:
   train_checkpoint: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_15_5_1500/Training/Unetresnet50/04102022_1541/epoch-35-loss-0.0030628.pth"
   test_checkpoint: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_15_5_1500/Training/Unetresnet50/04102022_1541/epoch-35-loss-0.0030628.pth"
   val_save_interval: 5
-  center_scatter_loss: True
-  center_heatmap_loss: False
+  center_scatter_loss: False
+  center_heatmap_loss: True
   bbox_heatmap_loss: False
   bbox_scatter_loss: True
   embedding_loss_start_epoch: 600
