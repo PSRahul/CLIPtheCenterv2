@@ -44,15 +44,17 @@ class SMP_HeatMapHead(nn.Module):
 
     def forward(self, x):
         x = self.model.forward(x)
-        x_like = torch.zeros_like(x)
-        y = torch.max(x.view(x.shape[0], -1), dim=1)[0]
-        for i in range(x.shape[0]):
-             if (y[i] < 1e-3):
-                 y[i] = 1e-3
+        return x
+        #x_like = torch.zeros_like(x)
+        #y = torch.max(x.view(x.shape[0], -1), dim=1)[0]
+        #for i in range(x.shape[0]):
+        #    x_like[i] = y[i]
 
-             x_like[i] = y[i]
+#            if (y[i] < 1e-3):
+ #                y[i] = 1e-3
 
-        return x / x_like
+
+        #return x / x_like
 
     def print_details(self):
         batch_size = 32
