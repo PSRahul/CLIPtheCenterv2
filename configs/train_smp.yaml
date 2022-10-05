@@ -9,7 +9,7 @@ device: "cuda"
 test_parameters:
   save_test_outputs: False
 trainer:
-  num_epochs: 300
+  num_epochs: 1000
   resume_training: False
   train_checkpoint: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_15_5_1500/Training/Unetresnet50/04102022_1541/epoch-35-loss-0.0030628.pth"
   test_checkpoint: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_15_5_1500/Training/Unetresnet50/04102022_1541/epoch-35-loss-0.0030628.pth"
@@ -18,8 +18,8 @@ trainer:
   center_heatmap_loss: True
   bbox_heatmap_loss: True
   bbox_scatter_loss: True
-  embedding_loss_start_epoch: 150
-  bbox_loss_start_epoch: 50
+  embedding_loss_start_epoch: 600
+  bbox_loss_start_epoch: 300
 
 data:
   train_data_root: "/home/psrahul/MasterThesis/datasets/PASCAL_15_5_1500/base_classes/train/coco/"

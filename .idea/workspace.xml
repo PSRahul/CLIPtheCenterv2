@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="change to adam">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="add orginal heatmap processing">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/heads/heatmap_head.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/heads/heatmap_head.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/network/models/SMP_DeepLab/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/network/models/SMP_DeepLab/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -242,13 +240,6 @@
       <workItem from="1664868416263" duration="698000" />
       <workItem from="1664874544570" duration="834000" />
       <workItem from="1664876819651" duration="14775000" />
-    </task>
-    <task id="LOCAL-00003" summary="1. Add checkpoint root_dir&#10;2. Initial config. for PASCAL_3_2_10">
-      <created>1664295902810</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1664295902810</updated>
     </task>
     <task id="LOCAL-00004" summary="1. Remove min_visiblity and area in augmentations.py">
       <created>1664295985324</created>
@@ -586,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664921287097</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="add orginal heatmap processing">
+      <created>1664955014151</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1664955014151</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -623,7 +621,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="working config. for PASCAL_3_2" />
     <MESSAGE value="change batch size to 24" />
     <MESSAGE value="change batch size to 48" />
     <MESSAGE value="change batch size to 8" />
@@ -648,7 +645,8 @@
     <MESSAGE value="disable center heatmap loss" />
     <MESSAGE value="make heatmap to gaussian" />
     <MESSAGE value="change to adam" />
-    <option name="LAST_COMMIT_MESSAGE" value="change to adam" />
+    <MESSAGE value="add orginal heatmap processing" />
+    <option name="LAST_COMMIT_MESSAGE" value="add orginal heatmap processing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
