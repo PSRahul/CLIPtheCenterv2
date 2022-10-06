@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="use only heatmap loss">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/metrics.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/metrics.yaml" afterDir="false" />
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="start with -1 bbox start">
       <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -256,14 +254,7 @@
       <workItem from="1664874544570" duration="834000" />
       <workItem from="1664876819651" duration="14775000" />
       <workItem from="1664977245657" duration="5426000" />
-      <workItem from="1665013509677" duration="2131000" />
-    </task>
-    <task id="LOCAL-00009" summary="1. metric config. for PASCAL_3_2_10">
-      <created>1664299971591</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1664299971591</updated>
+      <workItem from="1665013509677" duration="2266000" />
     </task>
     <task id="LOCAL-00010" summary="1. Changed dataset to PASCAL_3_2_10_SA">
       <created>1664306569580</created>
@@ -601,7 +592,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664966910951</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="start with -1 bbox start">
+      <created>1665015861260</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1665015861260</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -638,7 +636,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="fix divide by zero error in heatmap_head.py" />
     <MESSAGE value="local training setup" />
     <MESSAGE value="generated metric data" />
     <MESSAGE value="completed evaluation. training does not work" />
@@ -663,7 +660,8 @@
     <MESSAGE value="lr=1e-5" />
     <MESSAGE value="use only scatter loss" />
     <MESSAGE value="use only heatmap loss" />
-    <option name="LAST_COMMIT_MESSAGE" value="use only heatmap loss" />
+    <MESSAGE value="start with -1 bbox start" />
+    <option name="LAST_COMMIT_MESSAGE" value="start with -1 bbox start" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
