@@ -1,16 +1,16 @@
 data:
-  root: "/home/psrahul/MasterThesis/datasets/PASCAL_3_2/base_classes/train/coco/"
-prediction_path: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_3_2/Inference/Unetresnet50/03102022_1907/bbox_predictions.npy"
+  root: "/home/psrahul/MasterThesis/datasets/PASCAL_15_5_1500/base_classes/train/coco/"
+prediction_path: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_15_5_1500/Training/Unetresnet50/05102022_1932/bbox_predictions.npy"
 generate_clip_embedding: True
 clip_embedding_root: "/home/psrahul/MasterThesis/datasets/BBoxGroundtruths/PASCAL_3_2/train/"
 clip_embedding_path: "/home/psrahul/MasterThesis/datasets/PASCAL_2012_ZETA_CA/support_images/base_classes/val/clip_embeddings.npy"
 use_metric_data_path: False
 metric_data_path: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/PASCAL_3_2/metrics/03102022_1811/data.npz"
-perform_nms: False
+perform_nms: True
 post_processing:
   nms_iou_threshold: 0.5
-  score_threshold: 0
+  score_threshold: 0.8
   model_output_shape: 320
 logging:
   root_dir: "/home/psrahul/MasterThesis/repo/Phase5/Outputs/"
-  checkpoint_dir: "PASCAL_3_2/metrics/"
+  checkpoint_dir: "PASCAL_15_5_1500/metrics/"

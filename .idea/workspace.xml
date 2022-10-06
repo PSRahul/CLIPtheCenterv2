@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="use only scatter loss">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="use only heatmap loss">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/metrics.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/metrics.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -11,9 +12,22 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="main" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="test" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -32,6 +46,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;/home/psrahul/MasterThesis/repo/Phase5/CLIP_Encoder&quot;,
+    &quot;python.debugger.dataview.coloredbydefault&quot;: &quot;false&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.debugger.python&quot;
   }
 }</component>
@@ -240,13 +255,8 @@
       <workItem from="1664868416263" duration="698000" />
       <workItem from="1664874544570" duration="834000" />
       <workItem from="1664876819651" duration="14775000" />
-    </task>
-    <task id="LOCAL-00008" summary="1. Fix .gitignore">
-      <created>1664299746814</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1664299746814</updated>
+      <workItem from="1664977245657" duration="5426000" />
+      <workItem from="1665013509677" duration="2131000" />
     </task>
     <task id="LOCAL-00009" summary="1. metric config. for PASCAL_3_2_10">
       <created>1664299971591</created>
@@ -584,7 +594,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664962643216</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="use only heatmap loss">
+      <created>1664966910951</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1664966910951</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -621,7 +638,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="change batch size to 12" />
     <MESSAGE value="fix divide by zero error in heatmap_head.py" />
     <MESSAGE value="local training setup" />
     <MESSAGE value="generated metric data" />
@@ -646,7 +662,8 @@
     <MESSAGE value="change to resnet" />
     <MESSAGE value="lr=1e-5" />
     <MESSAGE value="use only scatter loss" />
-    <option name="LAST_COMMIT_MESSAGE" value="use only scatter loss" />
+    <MESSAGE value="use only heatmap loss" />
+    <option name="LAST_COMMIT_MESSAGE" value="use only heatmap loss" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -711,8 +728,8 @@
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$SMP_trainer_module.coverage" NAME="SMP_trainer_module Coverage Results" MODIFIED="1664312004747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/trainer" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$dataset_class.coverage" NAME="dataset_class Coverage Results" MODIFIED="1664308792029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$visualise.coverage" NAME="visualise Coverage Results" MODIFIED="1664314530347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/post_process" />
-    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1664823025348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$train.coverage" NAME="train Coverage Results" MODIFIED="1664954881537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$train.coverage" NAME="train Coverage Results" MODIFIED="1664991125653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1665014288545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$augmentations.coverage" NAME="augmentations Coverage Results" MODIFIED="1664295944665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
   </component>
 </project>
