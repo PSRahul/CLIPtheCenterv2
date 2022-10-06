@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="train=true">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="64">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
     </list>
@@ -255,21 +255,7 @@
       <workItem from="1664874544570" duration="834000" />
       <workItem from="1664876819651" duration="14775000" />
       <workItem from="1664977245657" duration="5426000" />
-      <workItem from="1665013509677" duration="2343000" />
-    </task>
-    <task id="LOCAL-00011" summary="1. Changed dataset to PASCAL_3_2_10_SA">
-      <created>1664306617688</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1664306617688</updated>
-    </task>
-    <task id="LOCAL-00012" summary="run clip model only after embedding_loss_start_epoch">
-      <created>1664306795077</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1664306795077</updated>
+      <workItem from="1665013509677" duration="3955000" />
     </task>
     <task id="LOCAL-00013" summary="initialise the heatmap and bbox heads">
       <created>1664307057786</created>
@@ -600,7 +586,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665015991645</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="train=true">
+      <created>1665016064591</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1665016064591</updated>
+    </task>
+    <task id="LOCAL-00061" summary="64">
+      <created>1665016106170</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1665016106170</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -637,7 +637,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="generated metric data" />
     <MESSAGE value="completed evaluation. training does not work" />
     <MESSAGE value="working training setup for server" />
     <MESSAGE value="add augmentations.py" />
@@ -662,7 +661,8 @@
     <MESSAGE value="use only heatmap loss" />
     <MESSAGE value="start with -1 bbox start" />
     <MESSAGE value="train=true" />
-    <option name="LAST_COMMIT_MESSAGE" value="train=true" />
+    <MESSAGE value="64" />
+    <option name="LAST_COMMIT_MESSAGE" value="64" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
