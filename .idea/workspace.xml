@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="64">
+    <list default="true" id="02ac7c88-68b9-40ec-a63c-0f445fec1e36" name="Changes" comment="final commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/train_smp.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/train_smp.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/metrics.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/configs/metrics.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/metrics.py" beforeDir="false" afterPath="$PROJECT_DIR$/metrics.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/post_process/visualise.py" beforeDir="false" afterPath="$PROJECT_DIR$/post_process/visualise.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,20 +41,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/psrahul/MasterThesis/repo/Phase5/CLIP_Encoder&quot;,
-    &quot;python.debugger.dataview.coloredbydefault&quot;: &quot;false&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.idesettings.debugger.python&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/psrahul/MasterThesis/repo/Phase5/CLIPtheCenterv2",
+    "python.debugger.dataview.coloredbydefault": "false",
+    "settings.editor.selected.configurable": "reference.idesettings.debugger.python"
   }
-}</component>
+}]]></component>
   <component name="PyDebuggerOptionsProvider">
     <option name="mySupportGeventDebugging" value="true" />
   </component>
-  <component name="RunManager" selected="Python.train">
+  <component name="RunManager" selected="Python.metrics">
     <configuration default="true" type="DjangoTestsConfigurationType">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -256,13 +258,10 @@
       <workItem from="1664876819651" duration="14775000" />
       <workItem from="1664977245657" duration="5426000" />
       <workItem from="1665013509677" duration="3955000" />
-    </task>
-    <task id="LOCAL-00013" summary="initialise the heatmap and bbox heads">
-      <created>1664307057786</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1664307057786</updated>
+      <workItem from="1665038457521" duration="40000" />
+      <workItem from="1665046504904" duration="9000" />
+      <workItem from="1665076105632" duration="448000" />
+      <workItem from="1666162802437" duration="1102000" />
     </task>
     <task id="LOCAL-00014" summary="1. fixed the error where the val set was loaded during test&#10;2. add image saving while running metric.py">
       <created>1664311076875</created>
@@ -600,7 +599,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665016106170</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="final commit">
+      <created>1665038482603</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1665038482603</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -617,7 +623,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="develop" />
+                        <option value="10_image_overfitting" />
                       </list>
                     </value>
                   </entry>
@@ -625,9 +631,9 @@
               </option>
               <option name="COLUMN_ID_WIDTH">
                 <map>
-                  <entry key="Table.Default.Author.ColumnIdWidth" value="131" />
-                  <entry key="Table.Default.Date.ColumnIdWidth" value="109" />
-                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="108" />
+                  <entry key="Table.Default.Author.ColumnIdWidth" value="142" />
+                  <entry key="Table.Default.Date.ColumnIdWidth" value="128" />
+                  <entry key="Table.Space.CommitStatus.ColumnIdWidth" value="128" />
                 </map>
               </option>
             </State>
@@ -637,7 +643,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="completed evaluation. training does not work" />
     <MESSAGE value="working training setup for server" />
     <MESSAGE value="add augmentations.py" />
     <MESSAGE value="config. for PASCAL_15_5 training" />
@@ -662,7 +667,8 @@
     <MESSAGE value="start with -1 bbox start" />
     <MESSAGE value="train=true" />
     <MESSAGE value="64" />
-    <option name="LAST_COMMIT_MESSAGE" value="64" />
+    <MESSAGE value="final commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="final commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -728,7 +734,7 @@
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$dataset_class.coverage" NAME="dataset_class Coverage Results" MODIFIED="1664308792029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$visualise.coverage" NAME="visualise Coverage Results" MODIFIED="1664314530347" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/post_process" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$train.coverage" NAME="train Coverage Results" MODIFIED="1664991125653" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1665014288545" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/CLIPtheCenterv2$metrics.coverage" NAME="metrics Coverage Results" MODIFIED="1666163901858" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/CLIPtheCenterv2$augmentations.coverage" NAME="augmentations Coverage Results" MODIFIED="1664295944665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/data" />
   </component>
 </project>

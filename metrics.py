@@ -155,6 +155,10 @@ def main(cfg):
         visualise_bbox(cfg=cfg, dataset=dataset, id=id, gt=gt, pred=prediction_with_nms_resized, draw_gt=True,
                        draw_pred=True,
                        resize_image_to_output_shape=False,checkpoint_dir=checkpoint_dir)
+        visualise_bbox(cfg=cfg, dataset=dataset, id=id, gt=gt, pred=prediction_with_nms_resized, draw_gt=True,
+                       draw_pred=True,
+                       resize_image_to_output_shape=False, checkpoint_dir=checkpoint_dir)
+
         #visualise_bbox(cfg=cfg, dataset=dataset, id=id, gt=gt, pred=prediction_with_nms, draw_gt=False,
         #               draw_pred=True,
         #               resize_image_to_output_shape=True,checkpoint_dir=checkpoint_dir)

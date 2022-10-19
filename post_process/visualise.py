@@ -37,7 +37,7 @@ def visualise_bbox(cfg, dataset, id, gt=None, pred=None, draw_gt=True, draw_pred
             bbox_i = predictions_image[i, 1:5]
             rect = patches.Rectangle(
                 (bbox_i[0], bbox_i[1]), bbox_i[2],
-                bbox_i[3], linewidth=2, edgecolor='r',
+                bbox_i[3], linewidth=1, edgecolor='r',
                 facecolor='none')
             ax.add_patch(rect)
 
